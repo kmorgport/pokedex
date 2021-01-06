@@ -34,6 +34,12 @@ $('#userSearch').click(function(e){
       }else{
           $('#typeB').append("<p>"+data.types[1].type.name+"</p>")
       }
+
+      if($('#number').text().length>0){
+          $('#number').text(data.id)
+      }else{
+          $('#number').append("<p>"+data.id+"</p>")
+      }
   })
     $.get(entries).done(function(data,status){
         data.forEach(mon=>{
