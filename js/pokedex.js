@@ -28,6 +28,11 @@ $('#userSearch').click(function(e){
       }else{
           $('#typeA').append("<p>"+data.types[0].type.name+"</p>")
       }
+      if($('#typeB').text().length>0){
+          $('#typeB').text(data.types[1].type.name)
+      }else{
+          $('#typeB').append("<p>"+data.types[1].type.name+"</p>")
+      }
   })
 })
 
