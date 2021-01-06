@@ -18,6 +18,10 @@
 #deets{
     height: 400px;
     background-color: papayawhip;
+    text-align: left;
+    justify-content: center;
+    font-size: large;
+    padding:1em;
 }
 #number{
     background-color: papayawhip;
@@ -41,3 +45,9 @@
 #typeB{
     background-color: lightgray;
 }
+
+/*#deets p{*/
+/*    text-align: left;*/
+/*    justify-content: center;*/
+/*    font-size: large;*/
+/*}*/
