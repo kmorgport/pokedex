@@ -13,6 +13,7 @@ $.get(dex).done(function(data, status, jqXhr){
 });
 
 const pokemon = "https://pokeapi.co/api/v2/pokemon/"
+const entries = "data/pokedex.json";
 
 $('#userSearch').click(function(e){
   e.preventDefault();
@@ -34,28 +35,12 @@ $('#userSearch').click(function(e){
           $('#typeB').append("<p>"+data.types[1].type.name+"</p>")
       }
   })
+    $.get(entries).done(function(data,status){
+        data.forEach(mon=>{
+            if(mon.name.includes(query)){
+                $('#deets').text(mon.content)
+            }
+        })
+    })
 })
 
-
-// $.get(pokemon).done(function(data, status, jqXhr){
-//     // alert("Went well.");
-//     console.log(data)
-// }).fail(function(jqXhr, status, error){
-//     // alert("Error error");
-//     console.log("Response status: "+ status);
-//     console.log("Error object: "+ error);
-// }).always(function(){
-//     console.log("This function runs!");
-// });
-
-const entries = "data/pokedex.json";
-$.get(entries).done(function(data, status, jqXhr){
-    // alert("Went well.");
-    console.log(data)
-}).fail(function(jqXhr, status, error){
-    // alert("Error error");
-    console.log("Response status: "+ status);
-    console.log("Error object: "+ error);
-}).always(function(){
-    console.log("This function runs!");
-});
