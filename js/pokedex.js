@@ -18,9 +18,16 @@ $('#userSearch').click(function(e){
   e.preventDefault();
   let query = $("#searchValue").val().toLowerCase();
   $.get(pokemon+query+"/").done(function(data,status){
+      console.log(data)
       if($('#picture').find('img').length){
           $('#picture img').attr("src",data.sprites['front_default'])
       }else{$('#picture').append("<img src='"+data.sprites['front_default']+"'>")}
+
+      if($('#typeA').text().length>0){
+          $('#typeA').text(data.types[0].type.name)
+      }else{
+          $('#typeA').append("<p>"+data.types[0].type.name+"</p>")
+      }
   })
 })
 

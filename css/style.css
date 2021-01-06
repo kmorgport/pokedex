@@ -22,7 +22,13 @@
 
 #picture{
     height:250px;
-    background-color: lightgray;
+    background-color: papayawhip;
+}
+
+#picture img{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
 }
 
 #typeA{
