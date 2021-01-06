@@ -12,20 +12,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
+<div class="container col-9">
 <div class="jumbotron">
     <h1 class="text-center">Pokedex</h1>
     <p class="lead text-center">Welcome to the Kanto Pokedex</p>
 </div>
-    <div>
+    <div class="background rounded">
     <div class="row info">
-        <div class="col-5 border border-primary">Search</div>
-        <div class="col-5 border border-secondary">Number</div>
-        <div class="col-5 border border-primary">Deets</div>
+        <div class=" col-5 input-group search-box">
+            <div class="input-group-append">
+                <button type="button" class="btn btn-primary"><span>Search</span></button>
+            </div>
+            <input type="text" class="form-control">
+        </div>
+<!--        <div class="col-5 border border-primary">Search</div>-->
+<!--        <div id="number" class="col-5 border border-secondary">Number</div>-->
+    </div>
+    <div class="row info">
+        <div id="deets" class="col-5 border rounded border-primary">Deets</div>
         <div class="col-5">
-            <div class="border border-success">Picture</div>
-            <div class="border border-danger">TypeA</div>
-            <div class="border border-info">TypeB</div>
+            <div id="number" class="card-header">Number</div>
+            <div id="picture" class="card-body rounded border border-success">Picture</div>
+            <div id="typeA" class="border rounded border-danger">TypeA</div>
+            <div id="typeB" class="border rounded border-info">TypeB</div>
         </div>
     </div>
     </div>

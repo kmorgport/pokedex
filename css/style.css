@@ -4,3 +4,31 @@
 .border{
     margin:2em;
 }
+
+.search-box{
+    margin-top:.5em;
+    margin-left: 1em;
+}
+.background{
+    background-color: indianred;
+    height: 600px;
+}
+
+
+#deets{
+    height: 400px;
+    background-color: lightgray;
+}
+
+#picture{
+    height:250px;
+    background-color: lightgray;
+}
+
+#typeA{
+    background-color: lightgray;
+}
+
+#typeB{
+    background-color: lightgray;
+}
