@@ -86,3 +86,12 @@ i {
     word-wrap: break-word;
     overflow: hidden;
 }
+
+ul{
+    display: flex;
+    justify-content: center;
+}
+
+li:nth-child(1){
+    text-align: center;
+}
