@@ -7,7 +7,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.navbar{
+    /*background: rgb(249,82,26);*/
+    /*background: linear-gradient(0deg, rgba(249,82,26,1) 14%, rgba(26,235,237,1) 95%);*/
+    background: rgb(79,8,8);
+    background: linear-gradient(0deg, rgba(145,11,11,1) 11%, rgba(204,0,0,1) 35%);
+}
 
 .box {
     font-size: 8px;
