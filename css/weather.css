@@ -7,9 +7,16 @@
     font-weight: normal;
     font-style: normal;
 }
+body{
+    background-image: url(../img/kanto-pixel.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .navbar{
     /*background: rgb(249,82,26);*/
     /*background: linear-gradient(0deg, rgba(249,82,26,1) 14%, rgba(26,235,237,1) 95%);*/
+    font-family: "Pokemon GB", Arial, sans-serif;
     background: rgb(79,8,8);
     background: linear-gradient(0deg, rgba(145,11,11,1) 11%, rgba(204,0,0,1) 35%);
 }
@@ -63,6 +70,7 @@ i {
 
 
 .text{
+    font-family: "Pokemon GB", Arial, sans-serif;
     width: 24.4em;
     min-height: 45px;
     height: 19.5em;
@@ -78,25 +86,132 @@ i {
     width: 24em;
     min-height: 45px;
     height: 19em;
-    background: #e0e0e8;
+    /*background: #e0e0e8;*/
+    background-color: #285068;
     margin: 0px 2px;
 }
 
 .detail{
     text-align: left;
-    color: #484848;
+    color: #e0e0e8;
+    /*color: #484848;*/
     font-size: 95%;
     line-height: 1.5em;
     padding: 0px 2px;
     word-wrap: break-word;
     overflow: hidden;
+    background-color: #285068;
 }
 
 ul{
+    font-family: "Pokemon GB", Arial, sans-serif;
     display: flex;
     justify-content: center;
 }
 
 li:nth-child(1){
     text-align: center;
+}
+li{
+    color: #484848;
+}
+
+.regionShell{
+    width: 248px;
+    min-height: 45px;
+    vertical-align: middle;
+    border: 1px #4870a0 solid;
+    border-radius: 18px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -khtml-border-radius: 18px;
+    -icab-border-radius: 18px;
+    -o-border-radius: 18px;
+    background: #a0d0e0;
+    padding: 2px 0px;
+    margin: 15px;
+    display: block;
+}
+
+.regionInset{
+    width: 244px;
+    min-height: 45px;
+    background: #f8f8f8;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    -icab-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin: 0px 2px;
+    display: block;
+}
+
+.regionLayer{
+    width: 240px;
+    min-height: 45px;
+    background: transparent;
+    margin: 0px 2px;
+    position: relative;
+}
+
+.regionLayer2{
+    width: 4px;
+    height: 60%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    display: block
+}
+
+.regionLayer3{
+    width: 4px;
+    height: 100%;
+    background: #e0f0f8;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -icab-border-radius: 2px;
+    -o-border-radius: 2px;
+    display: block;
+    position: relative;
+    top: -50%;
+}
+
+.regionLayer4{
+    width: 4px;
+    height: 60%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 236px;
+    display: block;
+}
+
+.regionLayer5{
+    width: 4px;
+    height: 100%;
+    background: #e0f0f8;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -icab-border-radius: 2px;
+    -o-border-radius: 2px;
+    display: block;
+    position: relative;
+    top: -50%;
+}
+
+.regionText{
+    font-family: "Pokemon GB", Arial, sans-serif;
+    text-align: left;
+    color: #606060;
+    font-size: 95%;
+    line-height: 1.5em;
+    margin: 0px 4px;
+    padding: 0px 2px;
+    word-wrap: break-word;
+    overflow: hidden;
 }
