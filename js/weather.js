@@ -14,6 +14,7 @@ regions.forEach(region=>{
         changeMap(parseInt(region.id))
         let city = findLocal(parseInt(region.id))
         updateWeather(city)
+        updateCity(region.innerText)
     })
 })
 
@@ -32,6 +33,7 @@ $.get("http://api.openweathermap.org/data/2.5/weather", {
     cnt: 40
 }).then(function(data){
     setWeather(data)
+    updateCity('Kanto')
     return data
 }).then(data=>{
     let moncode = parseInt(data.weather[0].id)
@@ -131,4 +133,9 @@ function changeMap(region){
             document.body.style.backgroundImage = "url('img/galar-pixel.png')"
             break
     }
+}
+
+function updateCity(input){
+    const current = document.getElementById('current')
+    current.innerText= "Current City: "+input
 }
