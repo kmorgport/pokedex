@@ -33,28 +33,28 @@ updateWeather();
 function changeMap(region){
     switch(region){
         case region = 1:
-            document.body.style.backgroundImage = "url('kanto-pixel.png')"
+            document.body.style.backgroundImage = "url('img/kanto-pixel.png')"
             break
         case region = 2:
-            document.body.style.backgroundImage = "url('../img=johto-pixel.png')"
+            document.body.style.backgroundImage = "url('img/johto-pixel.png')"
             break
         case region = 3:
-            document.body.style.backgroundImage = "url('../img/hoenn-pixel.png')"
+            document.body.style.backgroundImage = "url('img/hoenn-pixel.png')"
             break
         case region = 4:
-            document.body.style.backgroundImage = "url('../img/sinnoh-pixel.png')"
+            document.body.style.backgroundImage = "url('img/sinnoh-pixel.png')"
             break
         case region = 5:
-            document.body.style.backgroundImage = "url(../img/unova-pixel.png)"
+            document.body.style.backgroundImage = "url('img/unova-pixel.png')"
             break
         case region = 6:
-            document.body.style.backgroundImage = "url(../img/kalos-pixel.png)"
+            document.body.style.backgroundImage = "url('img/kalos-pixel.png')"
             break
         case region = 7:
-            document.body.style.backgroundImage = "url(../img/alola-pixel.png)"
+            document.body.style.backgroundImage = "url('img/alola-pixel.png')"
             break
         case region = 8:
-            document.body.style.backgroundImage = "url(../img/galar-pixel.png)"
+            document.body.style.backgroundImage = "url('img/galar-pixel.png')"
             break
     }
 
