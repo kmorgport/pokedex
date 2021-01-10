@@ -5,6 +5,13 @@ let descr = document.getElementById('descr');
 let humidity = document.getElementById('humidity')
 let wind = document.getElementById('wind');
 let pressure = document.getElementById('pressure');
+const regions = document.querySelectorAll('[data-region]')
+
+regions.forEach(region=>{
+    region.addEventListener('click',()=>{
+        changeMap(parseInt(region.id))
+    })
+})
 
 function setWeather(info){
     // header.textContent = info.dt_txt.slice(0,10);
@@ -57,5 +64,4 @@ function changeMap(region){
             document.body.style.backgroundImage = "url('img/galar-pixel.png')"
             break
     }
-
 }
