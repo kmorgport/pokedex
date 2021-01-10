@@ -9,23 +9,7 @@ const regions = document.querySelectorAll('[data-region]')
 const pokemon = "https://pokeapi.co/api/v2/pokemon/"
 const monform = "https://pokeapi.co/api/v2/pokemon-form/"
 
-regions.forEach(region=>{
-    region.addEventListener('click',()=>{
-        changeMap(parseInt(region.id))
-        let city = findLocal(parseInt(region.id))
-        updateWeather(city)
-        updateCity(region.innerText)
-    })
-})
 
-function setWeather(info){
-    // header.textContent = info.dt_txt.slice(0,10);
-    tempimage.innerHTML = info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"
-    descr.textContent = "Description: "+info.weather[0].description;
-    humidity.textContent = "Humidity: "+info.main.humidity;
-    wind.textContent = "Wind: "+info.wind.speed;
-    pressure.textContent = "Pressure: "+info.main.pressure;
-}
 $.get("http://api.openweathermap.org/data/2.5/weather", {
     APPID: weatherToken,
     q: "Tokyo, Japan",
@@ -44,6 +28,28 @@ $.get("http://api.openweathermap.org/data/2.5/weather", {
     }
 })
 
+regions.forEach(region=>{
+    region.addEventListener('click',()=>{
+        changeMap(parseInt(region.id))
+        let city = findLocal(parseInt(region.id))
+        updateWeather(city)
+        updateCity(region.innerText)
+    })
+})
+
+function getTime(time){
+    const milli = time * 1000
+    const dateObject = new Date(milli)
+    return dateObject.toLocaleString()
+}
+function setWeather(info){
+    header.textContent = getTime(info.dt);
+    tempimage.innerHTML = info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"
+    descr.textContent = "Description: "+info.weather[0].description;
+    humidity.textContent = "Humidity: "+info.main.humidity;
+    wind.textContent = "Wind: "+info.wind.speed;
+    pressure.textContent = "Pressure: "+info.main.pressure;
+}
 
 function updateWeather(local){
     $.get("http://api.openweathermap.org/data/2.5/weather", {
@@ -53,6 +59,7 @@ function updateWeather(local){
         cnt: 40
     }).then(function(data){
          setWeather(data)
+        console.log(data)
         return data
         }).then(data=>{
         let moncode = parseInt(data.weather[0].id)
