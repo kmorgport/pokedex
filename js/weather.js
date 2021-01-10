@@ -6,6 +6,8 @@ let humidity = document.getElementById('humidity')
 let wind = document.getElementById('wind');
 let pressure = document.getElementById('pressure');
 const regions = document.querySelectorAll('[data-region]')
+const pokemon = "https://pokeapi.co/api/v2/pokemon/"
+const monform = "https://pokeapi.co/api/v2/pokemon-form/"
 
 regions.forEach(region=>{
     region.addEventListener('click',()=>{
@@ -17,12 +19,29 @@ regions.forEach(region=>{
 
 function setWeather(info){
     // header.textContent = info.dt_txt.slice(0,10);
-    tempimage.innerHTML = info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"+"<img src=http://openweathermap.org/img/w/"+info.weather[0].icon+".png width=\"50\" height=\"50\">"
+    tempimage.innerHTML = info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"
     descr.textContent = "Description: "+info.weather[0].description;
     humidity.textContent = "Humidity: "+info.main.humidity;
     wind.textContent = "Wind: "+info.wind.speed;
     pressure.textContent = "Pressure: "+info.main.pressure;
 }
+$.get("http://api.openweathermap.org/data/2.5/weather", {
+    APPID: weatherToken,
+    q: "Tokyo, Japan",
+    units: "imperial",
+    cnt: 40
+}).then(function(data){
+    setWeather(data)
+    return data
+}).then(data=>{
+    let moncode = parseInt(data.weather[0].id)
+    if(moncode>=200&&moncode<=232){
+        snagPokemon('thundurus',pokemon)
+    }else{
+        setCastform(moncode)
+    }
+})
+
 
 function updateWeather(local){
     $.get("http://api.openweathermap.org/data/2.5/weather", {
@@ -30,10 +49,37 @@ function updateWeather(local){
         q: local,
         units: "imperial",
         cnt: 40
-    }).done(function(data){
-        console.log(data)
+    }).then(function(data){
          setWeather(data)
-        })
+        return data
+        }).then(data=>{
+        let moncode = parseInt(data.weather[0].id)
+        if(moncode>=200&&moncode<=232){
+            snagPokemon('thundurus',pokemon)
+        }else{
+            setCastform(moncode)
+        }
+
+    })
+}
+function snagPokemon(mon,api){
+    let query = mon
+    $.get(api+query+"/").done(data =>{
+        tempimage.innerHTML += "<img src='"+data.sprites['front_default']+ "'width=\"100\" height=\"100\">"
+})
+}
+function setCastform(code){
+    if(code>=300&&code<=531){
+        snagPokemon('castform-rainy',monform)
+    }else if(code>=600&&code<=622){
+        snagPokemon('castform-snowy',monform)
+    }else if(code>=700&&code<=781){
+        snagPokemon('castform',monform)
+    }else if(code===800){
+        snagPokemon('castform-sunny',monform)
+    }else if(code>800){
+        snagPokemon('castform',monform)
+    }
 }
 
 updateWeather();

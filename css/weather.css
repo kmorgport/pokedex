@@ -8,7 +8,7 @@
     font-style: normal;
 }
 body{
-    background-image: url(../img/alola-pixel.png);
+    background-image: url(../img/kanto-pixel.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,7 +57,7 @@ i {
 .dialogue{
     width: 25em;
     min-height: 45px;
-    height:23em;
+    height:27em;
     vertical-align: middle;
     border: 1px #98c8f8 solid;
     border-radius: 5px;
@@ -73,7 +73,7 @@ i {
     font-family: "Pokemon GB", Arial, sans-serif;
     width: 24.4em;
     min-height: 45px;
-    height: 22.5em;
+    height: 26.5em;
     background: #e0d8e0;
     border-radius: 2px;
     -moz-border-radius: 2px;
@@ -85,7 +85,7 @@ i {
 .color{
     width: 24em;
     min-height: 45px;
-    height: 22.2em;
+    height: 26.2em;
     /*background: #e0e0e8;*/
     background-color: #285068;
     margin: 0px 2px;
